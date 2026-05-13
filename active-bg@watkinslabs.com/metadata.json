@@ -1,0 +1,9 @@
+{
+  "uuid": "active-bg@watkinslabs.com",
+  "name": "Active BG",
+  "version": 1,
+  "description": "Live canvas-animated desktop wallpapers (aurora, neural, radar, wave grid, and more).",
+  "shell-version": ["45", "46", "47", "48"],
+  "settings-schema": "org.gnome.shell.extensions.active-bg",
+  "url": "https://github.com/watkinslabs/active-bg"
+}

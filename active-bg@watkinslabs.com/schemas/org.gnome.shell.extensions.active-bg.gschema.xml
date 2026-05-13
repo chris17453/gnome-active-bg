@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.active-bg" path="/org/gnome/shell/extensions/active-bg/">
+    <key name="effect" type="s">
+      <default>'aurora'</default>
+      <summary>Selected effect</summary>
+      <description>One of: aurora, blueprint, circuit, coderain, constellation, linkfield, meshwarp, neural, nodegraph, particles, phaseflow, radar, scanner, signalrings, wavegrid</description>
+    </key>
+    <key name="effect-config" type="s">
+      <default>'{}'</default>
+      <summary>Per-effect knob values (JSON)</summary>
+      <description>JSON dict keyed by effect name. Each value is an object of knob overrides, e.g. {"aurora":{"speed":1.5}}. Missing keys fall back to the manifest defaults.</description>
+    </key>
+    <key name="background-mode" type="s">
+      <default>'solid'</default>
+      <choices>
+        <choice value='solid'/>
+        <choice value='transparent'/>
+      </choices>
+      <summary>Background fill mode</summary>
+      <description>'solid' paints background-color behind the effect; 'transparent' lets the real GNOME wallpaper show through (only useful when the compositor renders us on the background layer).</description>
+    </key>
+    <key name="background-color" type="s">
+      <default>'#000000'</default>
+      <summary>Background color (when mode='solid')</summary>
+      <description>CSS color string. Hex like '#000000' or any valid css color name.</description>
+    </key>
+    <key name="paused" type="b">
+      <default>false</default>
+      <summary>Paused</summary>
+      <description>When true, the renderer is paused and uses 0% CPU. Toggled by the panel menu or the panic keybinding when the machine struggles.</description>
+    </key>
+    <key name="panic-key" type="as">
+      <default>['&lt;Super&gt;Escape']</default>
+      <summary>Panic-pause keybinding</summary>
+      <description>Global shortcut that toggles the renderer paused/resumed. Designed as an unconditional escape hatch when an expensive effect/FPS combo locks the machine.</description>
+    </key>
+    <key name="fps" type="i">
+      <default>30</default>
+      <range min="5" max="60"/>
+      <summary>Target animation framerate</summary>
+      <description>Frames per second the in-shell renderer aims for. Lower values cut CPU/GPU use significantly; 24 is usually plenty for ambient wallpaper motion.</description>
+    </key>
+    <key name="opacity" type="i">
+      <default>100</default>
+      <range min="0" max="100"/>
+      <summary>Effect opacity (percent)</summary>
+      <description>0 hides the effect entirely (real wallpaper shows through), 100 is fully opaque.</description>
+    </key>
+  </schema>
+</schemalist>

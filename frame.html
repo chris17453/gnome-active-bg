@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>active-bg</title>
+  <style>
+    html, body { margin:0; padding:0; height:100%; width:100%; overflow:hidden; }
+    canvas { position:fixed; inset:0; display:block; width:100vw; height:100vh; }
+  </style>
+</head>
+<body>
+<script>
+(async () => {
+  const params = new URLSearchParams(location.search);
+  const effect = params.get('effect') || 'aurora';
+  const opacity = Math.max(0, Math.min(100, parseInt(params.get('opacity') || '100', 10)));
+  const bgMode = params.get('bg') || 'solid';          // 'solid' | 'transparent'
+  const bgColor = params.get('bgColor') || '#000000';
+
+  // Background: html stays transparent in 'transparent' mode so the real
+  // GNOME wallpaper bleeds through; otherwise paint the requested color.
+  if (bgMode === 'transparent') {
+    document.documentElement.style.background = 'transparent';
+    document.body.style.background = 'transparent';
+  } else {
+    document.documentElement.style.background = bgColor;
+    document.body.style.background = bgColor;
+  }
+  document.body.style.opacity = (opacity / 100).toString();
+
+  // Load manifest defaults, then overlay per-effect overrides from ?cfg=.
+  const cfg = {};
+  try {
+    const resp = await fetch('./effects/manifest.json');
+    const manifest = await resp.json();
+    const entry = manifest[effect];
+    if (entry && entry.knobs) {
+      for (const k of entry.knobs) cfg[k.key] = k.default;
+    }
+  } catch (_) { /* manifest optional */ }
+
+  const rawCfg = params.get('cfg');
+  if (rawCfg) {
+    try {
+      const overrides = JSON.parse(atob(rawCfg));
+      if (overrides && typeof overrides === 'object')
+        Object.assign(cfg, overrides);
+    } catch (_) { /* bad cfg → defaults */ }
+  }
+  window.AB_CFG = cfg;
+
+  const s = document.createElement('script');
+  s.src = './effects/' + effect + '.js';
+  s.onerror = () => {
+    document.body.innerHTML = '<pre style="color:#f88;padding:20px">unknown effect: ' + effect + '</pre>';
+  };
+  document.body.appendChild(s);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+{
+  "aurora": {
+    "label": "Aurora",
+    "knobs": [
+      {"key": "bands",       "label": "Bands",         "type": "int",   "min": 2,    "max": 30,  "default": 14},
+      {"key": "speed",       "label": "Speed",         "type": "float", "min": 0.1,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "amplitude",   "label": "Amplitude",     "type": "float", "min": 0.3,  "max": 2.5, "default": 1.0, "step": 0.1},
+      {"key": "nodeGlow",    "label": "Node glow",     "type": "float", "min": 0.0,  "max": 2.0, "default": 1.0, "step": 0.1},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "blueprint": {
+    "label": "Blueprint",
+    "knobs": [
+      {"key": "gridSize",    "label": "Grid size",     "type": "int",   "min": 30,   "max": 200, "default": 80},
+      {"key": "spawnRate",   "label": "Element rate",  "type": "float", "min": 0.3,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "hue",         "label": "Base hue",      "type": "int",   "min": 0,    "max": 360, "default": 195},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "circuit": {
+    "label": "Circuit board",
+    "knobs": [
+      {"key": "traceCount",  "label": "Traces",        "type": "int",   "min": 5,    "max": 60,  "default": 22},
+      {"key": "pulseRate",   "label": "Pulse rate",    "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "hue",         "label": "Base hue",      "type": "int",   "min": 0,    "max": 360, "default": 200},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "coderain": {
+    "label": "Code rain",
+    "knobs": [
+      {"key": "speed",       "label": "Fall speed",    "type": "float", "min": 0.3,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "fontSize",    "label": "Font size",     "type": "int",   "min": 8,    "max": 28,  "default": 13},
+      {"key": "density",     "label": "Density",       "type": "float", "min": 0.4,  "max": 2.0, "default": 1.0, "step": 0.1},
+      {"key": "charset",     "label": "Glyphs",        "type": "choice","options": ["code","binary","katakana","hex"], "default": "code"},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "constellation": {
+    "label": "Constellation",
+    "knobs": [
+      {"key": "stars",       "label": "Stars",         "type": "int",   "min": 20,   "max": 220, "default": 70},
+      {"key": "linkDist",    "label": "Link range",    "type": "int",   "min": 60,   "max": 260, "default": 140},
+      {"key": "speed",       "label": "Drift speed",   "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "linkfield": {
+    "label": "Link field",
+    "knobs": [
+      {"key": "lineHeight",  "label": "Line height",   "type": "int",   "min": 14,   "max": 40,  "default": 22},
+      {"key": "scrollSpeed", "label": "Scroll speed",  "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "linkChance",  "label": "Link density",  "type": "float", "min": 0.0,  "max": 1.0, "default": 0.7, "step": 0.05},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "meshwarp": {
+    "label": "Mesh warp",
+    "knobs": [
+      {"key": "cols",        "label": "Columns",       "type": "int",   "min": 8,    "max": 32,  "default": 18},
+      {"key": "rows",        "label": "Rows",          "type": "int",   "min": 6,    "max": 22,  "default": 12},
+      {"key": "speed",       "label": "Warp speed",    "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "neural": {
+    "label": "Neural fire",
+    "knobs": [
+      {"key": "layers",       "label": "Layers",       "type": "int",   "min": 3,    "max": 12,  "default": 7},
+      {"key": "perLayer",     "label": "Per layer",    "type": "int",   "min": 3,    "max": 16,  "default": 9},
+      {"key": "connectivity", "label": "Connectivity", "type": "float", "min": 0.1,  "max": 1.0, "default": 0.4, "step": 0.05},
+      {"key": "fireRate",     "label": "Fire rate",    "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "paletteShift", "label": "Hue shift",    "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",   "label": "Saturation",   "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "nodegraph": {
+    "label": "Node graph",
+    "knobs": [
+      {"key": "count",       "label": "Nodes",         "type": "int",   "min": 15,   "max": 120, "default": 42},
+      {"key": "linkDist",    "label": "Link distance", "type": "int",   "min": 80,   "max": 300, "default": 180},
+      {"key": "speed",       "label": "Drift speed",   "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "particles": {
+    "label": "Particles",
+    "knobs": [
+      {"key": "count",       "label": "Particles",     "type": "int",   "min": 30,   "max": 300, "default": 90},
+      {"key": "linkDist",    "label": "Link distance", "type": "int",   "min": 60,   "max": 260, "default": 130},
+      {"key": "speed",       "label": "Speed",         "type": "float", "min": 0.2,  "max": 2.5, "default": 1.0, "step": 0.1},
+      {"key": "mouseRadius", "label": "Mouse field",   "type": "int",   "min": 0,    "max": 260, "default": 110},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "phaseflow": {
+    "label": "Phase flow",
+    "knobs": [
+      {"key": "streams",     "label": "Streams",       "type": "int",   "min": 1,    "max": 10,  "default": 4},
+      {"key": "speed",       "label": "Speed",         "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "amplitude",   "label": "Amplitude",     "type": "float", "min": 0.3,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "radar": {
+    "label": "Radar sweep",
+    "knobs": [
+      {"key": "blips",       "label": "Contacts",      "type": "int",   "min": 10,   "max": 200, "default": 55},
+      {"key": "sweepSpeed",  "label": "Sweep speed",   "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "gridSize",    "label": "Grid size",     "type": "int",   "min": 20,   "max": 120, "default": 52},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "scanner": {
+    "label": "Scanner",
+    "knobs": [
+      {"key": "speed",       "label": "Scan speed",    "type": "float", "min": 0.3,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "points",      "label": "Targets",       "type": "int",   "min": 8,    "max": 120, "default": 32},
+      {"key": "paletteShift","label": "Hue shift",     "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",  "label": "Saturation",    "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "signalrings": {
+    "label": "Signal rings",
+    "knobs": [
+      {"key": "spawnRate",     "label": "Spawn rate",  "type": "float", "min": 0.3,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "expandSpeed",   "label": "Expand speed","type": "float", "min": 0.3,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "ringsPerBurst", "label": "Rings/burst", "type": "int",   "min": 1,    "max": 8,   "default": 3},
+      {"key": "paletteShift",  "label": "Hue shift",   "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",    "label": "Saturation",  "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  },
+  "wavegrid": {
+    "label": "Wave grid",
+    "knobs": [
+      {"key": "spacing",      "label": "Dot spacing", "type": "int",   "min": 20,   "max": 80,  "default": 38},
+      {"key": "speed",        "label": "Wave speed",  "type": "float", "min": 0.2,  "max": 3.0, "default": 1.0, "step": 0.1},
+      {"key": "rippleRadius", "label": "Ripple radius","type": "int",  "min": 60,   "max": 320, "default": 160},
+      {"key": "paletteShift", "label": "Hue shift",   "type": "int",   "min": -180, "max": 180, "default": 0},
+      {"key": "saturation",   "label": "Saturation",  "type": "float", "min": 0.0,  "max": 1.5, "default": 1.0, "step": 0.05}
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>active-bg — picker</title>
+  <style>
+    html,body{margin:0;background:#0a0e1a;color:#cfe;font:14px/1.4 ui-monospace,monospace;height:100%;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:18px;}
+    .card{position:relative;height:180px;border:1px solid #1a3050;border-radius:8px;overflow:hidden;cursor:pointer;background:#000;}
+    .card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;}
+    .card .label{position:absolute;left:8px;bottom:6px;background:#0008;padding:3px 8px;border-radius:4px;font-size:12px;}
+    h1{padding:14px 18px 0;font-weight:500;}
+    .hint{padding:0 18px;color:#7a9;font-size:12px;}
+  </style>
+</head>
+<body>
+<h1>active-bg / effect preview</h1>
+<p class="hint">click a card to open it fullscreen at <code>frame.html?effect=NAME</code></p>
+<div class="grid" id="g"></div>
+<script>
+const EFFECTS=['aurora','blueprint','circuit','coderain','constellation','linkfield','meshwarp','neural','nodegraph','particles','phaseflow','radar','scanner','signalrings','wavegrid'];
+const g=document.getElementById('g');
+for(const name of EFFECTS){
+  const a=document.createElement('a');
+  a.className='card';
+  a.href='frame.html?effect='+name;
+  a.target='_blank';
+  a.innerHTML=`<iframe src="frame.html?effect=${name}" loading="lazy"></iframe><div class="label">${name}</div>`;
+  g.appendChild(a);
+}
+</script>
+</body>
+</html>
